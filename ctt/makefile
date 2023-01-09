@@ -1,0 +1,13 @@
+var1:=$(wildcard ./*.c ./cttt/*.c)
+var2:=$(notdir $(var1))
+var3:=$(dir $(var1))
+var4:=$(patsubst %.c,%.k,$(var2))
+var5:=$(var2:%.c=%.p)
+var6:=$(foreach n,$(var3),$(wildcard $(n)*.c))
+all:
+	@echo $(var1)
+	@echo $(var2)
+	@echo $(var3)
+	@echo $(var4)
+	@echo $(var5)
+	@echo $(var6)
